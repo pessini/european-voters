@@ -1,0 +1,247 @@
+---
+title: "Leave or remain in the European Union? Examining the factors that influence in European voters."
+author: "Leandro Pessini"
+date: "12/18/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r libraries, message=FALSE, warning=FALSE}
+
+# Student Name: Leandro Pessini
+# Student number: D20125689
+# Programme Code: TU256
+# MAT 9102 - Probability and Statistical Inference
+# Option chosen: Option A
+# R version 4.0.2 (2020-06-22)
+
+# R packages
+if(!require(foreign))install.packages("foreign")
+if(!require(ggplot2))install.packages("ggplot2")
+if(!require(dplyr))install.packages("dplyr")
+if(!require(moments))install.packages("moments")
+if(!require(coin))install.packages("coin")
+if(!require(Epi))install.packages("Epi")
+
+```
+
+## Loading Dataset
+
+```{r loading-dataset, message=FALSE, warning=FALSE}
+
+survey <- read.spss("ESS9e03.sav", use.value.labels=T, max.value.labels=Inf, to.data.frame=TRUE)
+
+# for the purpose of the study I will use 5 variables
+european_survey <- survey[,c("vteurmmb", "cntry", "eduyrs", "uemp3m", "mbtru")]
+```
+
+
+## Data Transformation
+
+```{r data-transformation}
+# Checking for NA's in the dataset
+sapply(european_survey, function(x) sum(is.na(x)))
+
+# Target variable transformation
+european_survey$vteurmmb <- as.character(european_survey$vteurmmb)
+european_survey$vteurmmb[european_survey$vteurmmb == "Remain member of the European Union"] <- "Remain"
+european_survey$vteurmmb[european_survey$vteurmmb == "Leave the European Union"] <- "Leave"
+european_survey$vteurmmb[european_survey$vteurmmb == "Would submit a blank ballot paper"] <- NA
+european_survey$vteurmmb[european_survey$vteurmmb == "Would spoil the ballot paper"] <- NA
+european_survey$vteurmmb[european_survey$vteurmmb == "Would not vote"] <- NA
+european_survey$vteurmmb[european_survey$vteurmmb == "Not eligible to vote"] <- NA
+european_survey$vteurmmb <- as.factor(european_survey$vteurmmb)
+
+# Cleaning NA values
+df_european_survey <- european_survey[complete.cases(european_survey), ]
+
+# Checking for NA's again
+sapply(df_european_survey, function(x) sum(is.na(x)))
+
+prop.table(table(df_european_survey$vteurmmb))
+
+# Data transformation
+
+df_european_survey$uemp3m <- as.character(df_european_survey$uemp3m)
+df_european_survey$uemp3m <- as.factor(df_european_survey$uemp3m)
+prop.table(table(df_european_survey$uemp3m))
+
+df_european_survey$mbtru <- as.character(df_european_survey$mbtru)
+df_european_survey$mbtru[df_european_survey$mbtru == "Yes, currently"] <- "Yes"
+df_european_survey$mbtru[df_european_survey$mbtru == "Yes, previously"] <- "Yes"
+df_european_survey$mbtru <- as.factor(df_european_survey$mbtru)
+prop.table(table(df_european_survey$mbtru))
+
+df_european_survey$eduyrs <- as.numeric(df_european_survey$eduyrs)
+
+```
+
+## Difference between eduyrs and vteurmmb
+
+```{r years-of-study}
+
+# Difference on years of study on the vote
+
+ggplot(df_european_survey, aes(x=eduyrs)) + 
+  labs(x="Years of Education") + 
+  geom_histogram(binwidth=2, colour="black", aes(y=..density.., fill=..count..)) + 
+  scale_fill_gradient("Count", low="#DCDCDC", high="#7C7C7C") + 
+  stat_function(fun=dnorm, color="red", args=list(mean=mean(df_european_survey$eduyrs, na.rm=TRUE), 
+                                                  sd=sd(df_european_survey$eduyrs, na.rm=TRUE)))
+
+moments::skewness(df_european_survey$eduyrs) # 0.525019
+moments::kurtosis(df_european_survey$eduyrs) # 6.253433
+
+ks.test(df_european_survey$eduyrs, "pnorm")
+# Not normal
+
+wilcox.yearsOfStudy.byVote <- coin::wilcox_test(eduyrs~vteurmmb, data = df_european_survey)
+wilcox.yearsOfStudy.byVote
+# There is a significant difference p-value < 2.2e-16
+
+```
+
+## Difference between uemp3m and vteurmmb
+
+```{r employment-status}
+
+# Difference on employment status and the vote
+gmodels::CrossTable(df_european_survey$uemp3m, 
+                    df_european_survey$vteurmmb,
+                    prop.r=TRUE,
+                    prop.c=FALSE,
+                    prop.t=FALSE,
+                    prop.chisq=FALSE,
+                    digits=2,
+                    chisq = TRUE)
+```
+
+## Difference between mbtru and vteurmmb
+
+```{r labor-union-participation}
+
+# Difference on participation in a Labor Union and the vote
+gmodels::CrossTable(df_european_survey$mbtru, 
+                    df_european_survey$vteurmmb,
+                    prop.r=TRUE,
+                    prop.c=FALSE,
+                    prop.t=FALSE,
+                    prop.chisq=FALSE,
+                    digits=2,
+                    chisq = TRUE)
+
+```
+
+## Logistic Regression Models
+
+### Model version 1
+
+```{r logistic-regression-models-v1}
+
+# First version
+model1 <- glm(vteurmmb ~ cntry + eduyrs + uemp3m + mbtru,
+                 data = df_european_survey, 
+                 family = binomial(link = "logit"))
+
+summary(model1)
+
+# Version 1 - ROC plot
+Epi::ROC(form=df_european_survey$vteurmmb ~ 
+           df_european_survey$cntry + 
+           df_european_survey$eduyrs + 
+           df_european_survey$uemp3m + 
+           df_european_survey$mbtru, 
+         plot="ROC", MI=F)
+
+```
+
+### Model version 2
+
+```{r logistic-regression-models-v2}
+
+# Second version - removing variable Country
+model2 <- glm(vteurmmb ~ eduyrs + uemp3m + mbtru,
+                 data = df_european_survey, 
+                 family = binomial(link = "logit"))
+
+summary(model2)
+
+# Version 2 - ROC plot
+Epi::ROC(form=df_european_survey$vteurmmb ~
+           df_european_survey$eduyrs + 
+           df_european_survey$uemp3m + 
+           df_european_survey$mbtru, 
+         plot="ROC", MI=F)
+
+```
+
+### Model version 3
+
+```{r logistic-regression-models-v3}
+# Transforming the variable Education Years to a categorical one
+df_european_survey <- df_european_survey %>% mutate(edu_profile = case_when(eduyrs < 15 ~ 1, eduyrs>=15 & eduyrs<=30 ~ 2, TRUE ~ 3 ))
+
+# Third version - changing years of study to categorical variable
+model3 <- glm(vteurmmb ~ edu_profile + uemp3m + mbtru,
+                 data = df_european_survey, 
+                 family = binomial(link = "logit"))
+
+summary(model3)
+
+# Version 3 - ROC plot
+Epi::ROC(form=df_european_survey$vteurmmb ~ 
+           df_european_survey$edu_profile + 
+           df_european_survey$uemp3m + 
+           df_european_survey$mbtru, 
+         plot="ROC", MI=F)
+
+```
+
+## Predictions and Insights
+
+```{r predict}
+
+predict_european_survey <- df_european_survey
+
+# Predictions
+predict_european_survey$pps1 <- predict(model2, newdata = predict_european_survey, type = "response")
+
+# setting a significance of 0.7
+predict_european_survey$evs1 <- ifelse(predict_european_survey$pps1 > 0.7, yes = 1, no = 0)
+
+# What's the probability for a person with 13 years of education, unemployed and which have not been a trade union member to vote for the the country to leave the UE?
+person1 <- predict(model2,
+                   newdata = data.frame(eduyrs = 13, uemp3m = 'Yes', mbtru = 'No'),
+                   type = "response")
+
+paste0(round(person1*100,2), "%")
+
+# What's the probability for a person with 20 years of education, employed and which have not been a trade union member to vote for the the country to leave the UE?
+person2 <- predict(model2,
+                   newdata = data.frame(eduyrs = 20, uemp3m = 'No', mbtru = 'No'),
+                   type = "response")
+
+paste0(round(person2*100,2), "%") 
+
+# Creating a plot to check hyphotesis 3
+educational_profile <- data.frame(eduyrs = seq(from = 0, to = 50, by = .5),
+                                 uemp3m =  'No', 
+                                 mbtru = 'No')
+
+educational_profile$predicted_probs <- predict(model2, 
+                                              newdata = educational_profile, 
+                                              type = "response")
+
+# Plot: Vote for Years of Education
+ggplot(educational_profile, 
+       aes(x = eduyrs, y = predicted_probs)) + 
+  geom_line(alpha = 0.5) + 
+  ylab("Probability to vote for Leave the UE") + 
+  xlab("Years of Education") + 
+  ggtitle("Vote for Leave the UE by Years of Education")
+
+
+```

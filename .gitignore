@@ -1,6 +1,12 @@
+# Paper's files
+*.pages
+*.pdf
+*.word
+
 # History files
 .Rhistory
 .Rapp.history
+.DS_Store
 
 # Session Data files
 .RData
