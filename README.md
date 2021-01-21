@@ -1,6 +1,6 @@
 ## Leave or remain in the European Union? Examining the factors that influence in European voters.
 
-This repo contains the code to reproduce the results obtained on the paper "[XXXX](https://arxiv.org/)".
+This repo contains the code to reproduce the results obtained on the paper "[...](https://arxiv.org/)".
 
 ## Files
 
@@ -8,6 +8,7 @@ This repo contains the code to reproduce the results obtained on the paper "[XXX
 - ```paper_code.ipynb``` has the code used to process the European Social Survey data.
 - Model Images folder has the images used on the paper.
 
+<!--
 ## Cite
 
 ```
@@ -20,3 +21,4 @@ This repo contains the code to reproduce the results obtained on the paper "[XXX
       primaryClass={cs.LG}
 }
 ```
+-->
