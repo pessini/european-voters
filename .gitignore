@@ -11,6 +11,9 @@
 # Local only folder
 /ignore-folder/
 
+.ipynb_checkpoints
+.virtual_documents
+
 # Session Data files
 .RData
 
