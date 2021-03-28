@@ -8,6 +8,9 @@
 .Rapp.history
 .DS_Store
 
+# Local only folder
+/ignore-folder/
+
 # Session Data files
 .RData
 
