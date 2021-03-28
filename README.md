@@ -8,8 +8,10 @@ This paper will conduct all statistical relevant tests and will present a few in
 
 ## Dataset
 
-- The topics covered at least once by the ESS since its inception include media and social trust, politics, subjective well-being, gender, household, socio demographics, human values, immigration, citizen involvement, health and care, economic morality, family, work and well-being, timing of life, personal and social well-being, welfare attitudes, ageism, trust in justice, democracy, health inequalities, climate change and energy use, justice and fairness, and digital social contacts.
-  
-  The dataset has 572 variables and I will select a few relevant variables to build a Logistic Regression model to explain the target variable (*vteurmmb*) which is if the person would vote for your country to leave or remain a member of the European Union.
-  
-  I selected 4 variables in order to predict the vote. The country, number of education years, employed/unemployed and if the person has ever participated in a Labor Union.
+The topics covered at least once by the ESS since its inception include media and social trust, politics, subjective well-being, gender, household, socio demographics, human values, immigration, citizen involvement, health and care, economic morality, family, work and well-being, timing of life, personal and social well-being, welfare attitudes, ageism, trust in justice, democracy, health inequalities, climate change and energy use, justice and fairness, and digital social contacts.
+
+The dataset has 572 variables and I will select a few relevant variables to build a Logistic Regression model to explain the target variable (*vteurmmb*) which is if the person would vote for your country to leave or remain a member of the European Union.
+
+
+
+I selected 4 variables in order to predict the vote. The country, number of education years, employed/unemployed and if the person has ever participated in a Labor Union.
