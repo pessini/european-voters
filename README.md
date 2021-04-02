@@ -4,13 +4,11 @@
 
 This report will investigated a dataset provided by [European Social Survey](https://www.europeansocialsurvey.org/) (ESS) which is a biennial cross-national survey of attitudes and behaviour from European citizens. 
 
-The study will focus on which aspects can influence for a person to vote for your country leave or remain a member of the European Union. 
-
-After analyzing each variable individually I will build a model that after been trained can predict the probability on a person to vote for your country to Leave the European Union.
+The topics covered by ESS are very heterogeneous and include media and social trust, politics, immigration, citizen involvement, health and care, economic, work and well-being.. The analysis will focus on which aspects can influence for a person to vote for your country leave or remain a member of the European Union. 
 
 ## Dataset
 
-The topics covered by ESS are very heterogeneous and include media and social trust, politics, immigration, citizen involvement, health and care, economic, work and well-being. 
+The variables selected for the analysis were Country, Age, Gender, Employment status, Education and Union Membership.
 
 ## Survey Weights
 
