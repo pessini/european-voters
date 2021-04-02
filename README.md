@@ -10,9 +10,7 @@ After analyzing each variable individually I will build a model that after been 
 
 ## Dataset
 
-The topics covered at least once by the ESS since its inception include media and social trust, politics, subjective well-being, gender, household, socio demographics, human values, immigration, citizen involvement, health and care, economic morality, family, work and well-being, timing of life, personal and social well-being, welfare attitudes, ageism, trust in justice, democracy, health inequalities, climate change and energy use, justice and fairness, and digital social contacts.
-
-
+The topics covered by ESS are very heterogeneous and include media and social trust, politics, immigration, citizen involvement, health and care, economic, work and well-being. 
 
 ## Survey Weights
 
