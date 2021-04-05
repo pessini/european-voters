@@ -8,6 +8,10 @@ The analysis will focus on which aspects can influence for a person to vote for 
 
 ## Dataset
 
+The dataset used was [ESS9-2018 Edition 3.1](https://www.europeansocialsurvey.org/docs/round9/survey/ESS9_data_documentation_report_e03_1.pdf) released on 17th of February 2021 and it can be founded [here](https://github.com/pessini/european-voters/blob/main/ESS9e03_1.sav).
+
+### Data Dictionary
+
 - __CNTRY__ Country
 - __EDUYRS__ Years of full-time education completed
 - __EISCED__ Highest level of education, ES - ISCED
