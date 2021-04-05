@@ -4,7 +4,7 @@
 
 This analysis will investigated a dataset provided by [European Social Survey](https://www.europeansocialsurvey.org/) (ESS) which is a cross-national survey of attitudes and behaviour from European citizens. The topics covered by ESS are very heterogeneous and include media and social trust, politics, immigration, citizen involvement, health and care, economic, work and well-being.
 
-The analysis will focus on which aspects can influence for a person to vote for your country leave or remain a member of the European Union. 
+The analysis will focus on which aspects can influence a person vote for your country leave or remain a member of the European Union. 
 
 ## Dataset
 
