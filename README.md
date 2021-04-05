@@ -6,6 +6,16 @@ This analysis will investigated a dataset provided by [European Social Survey](h
 
 The analysis will focus on which aspects can influence a person vote for your country leave or remain a member of the European Union. 
 
+
+
+### Software version
+
+[R](https://www.r-project.org/foundation/) - version 4.0.2
+
+To run R in [Jupyter Notebooks](https://jupyter.org/), check out the [IRKernel](https://irkernel.github.io/) project.
+
+For a list of supported programming languages in Jupyter Notebooks, please refer to the [Jupyter kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) page in GitHub.
+
 ## Dataset
 
 The dataset used was [ESS9-2018 Edition 3.1](https://www.europeansocialsurvey.org/docs/round9/survey/ESS9_data_documentation_report_e03_1.pdf) released on 17th of February 2021 and it can be founded [here](https://github.com/pessini/european-voters/blob/main/ESS9e03_1.sav).
