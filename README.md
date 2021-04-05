@@ -2,13 +2,22 @@
 
 <img src="https://github.com/pessini/european-voters/blob/main/img/ESS-logo.png" alt="European Social Survey" width="250"/><br>
 
-This report will investigated a dataset provided by [European Social Survey](https://www.europeansocialsurvey.org/) (ESS) which is a biennial cross-national survey of attitudes and behaviour from European citizens. 
+This analysis will investigated a dataset provided by [European Social Survey](https://www.europeansocialsurvey.org/) (ESS) which is a cross-national survey of attitudes and behaviour from European citizens. The topics covered by ESS are very heterogeneous and include media and social trust, politics, immigration, citizen involvement, health and care, economic, work and well-being.
 
-The topics covered by ESS are very heterogeneous and include media and social trust, politics, immigration, citizen involvement, health and care, economic, work and well-being.. The analysis will focus on which aspects can influence for a person to vote for your country leave or remain a member of the European Union. 
+The analysis will focus on which aspects can influence for a person to vote for your country leave or remain a member of the European Union. 
 
 ## Dataset
 
-The variables selected for the analysis were Country, Age, Gender, Employment status, Education and Union Membership.
+- __CNTRY__ Country
+- __EDUYRS__ Years of full-time education completed
+- __EISCED__ Highest level of education, ES - ISCED
+- __NETUSOFT__ Internet use, how often
+- __UEMP3M__ Ever unemployed and seeking work for a period more than three months
+- __MBTRU__ Member of trade union or similar organisation
+- __GNDR__ Gender
+- __YRBRN__  Year of birth
+- __AGEA__ Age of respondent. Calculation based on year of birth and year of interview
+- __VTEURMMB__ Would vote for your country to remain member of European Union or leave
 
 ## Survey Weights
 
