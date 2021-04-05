@@ -16,7 +16,7 @@ For a list of supported programming languages in Jupyter Notebooks, please refer
 
 ## Dataset
 
-The dataset used was [ESS9-2018 Edition 3.1](https://www.europeansocialsurvey.org/docs/round9/survey/ESS9_data_documentation_report_e03_1.pdf) released on 17th of February 2021 and it can be founded [here](https://github.com/pessini/european-voters/blob/main/ESS9e03_1.sav).
+The dataset used was [ESS9-2018 Edition 3.1](https://www.europeansocialsurvey.org/docs/round9/survey/ESS9_data_documentation_report_e03_1.pdf) released on 17th of February 2021 and it can be found [here](https://github.com/pessini/european-voters/blob/main/ESS9e03_1.sav).
 
 ### Features
 
