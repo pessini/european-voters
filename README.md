@@ -40,4 +40,4 @@ The analysis of survey data often uses complex sample designs and **weighting a
 
 ### Data Storytelling
 
-The Data Analysis can be visualized as a [Repository Page]([European-Voters-Analysis (pessini.github.io)](https://pessini.github.io/european-voters/)).
+The Data Analysis can be visualized as a [Repository Page]([European-Voters-Analysis (pessini.github.io)](https://pessini.github.io/european-voters/).
