@@ -36,8 +36,6 @@ The dataset used was [ESS9-2018 Edition 3.1](https://www.europeansocialsurvey.or
 
 The analysis of survey data often uses complex sample designs and **weighting adjustments** in order to make the sample look more like the intended population of the survey. As ESS is a **cross-national survey** and countries implement different sample designs, it is important to use weights in all analyses to take into consideration the country context, and therefore **avoid bias in the outcome**.
 
------
-
-### Data Storytelling
+## Data Storytelling
 
 The Data Analysis can be visualized as a [Repository Page]([European-Voters-Analysis (pessini.github.io)](https://pessini.github.io/european-voters/).
