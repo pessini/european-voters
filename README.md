@@ -45,3 +45,7 @@ According to ESS documentation:
 > *anweight* corrects for differential selection probabilities within each country as specified by sample design, for nonresponse, for noncoverage, and for sampling error related to the four post-stratification variables, and takes into account differences in population size across countries.
 
 Details about how ESS weights the data can be found [here](https://www.europeansocialsurvey.org/docs/methodology/ESS_weighting_data_1_1.pdf).
+
+-----
+
+The
