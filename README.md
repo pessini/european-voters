@@ -1,4 +1,4 @@
-## ## Examining factors that influence EU acceptance among European voters <img title="" src="img/ess_logo.png" alt="" align="right">
+## Examining factors that influence EU acceptance among European voters <img title="" src="img/ess_logo.png" alt="" align="right">
 
 ## Description
 
