@@ -1,12 +1,12 @@
 ## Examining factors that influence EU acceptance among European voters
 
-<img title="European Social Survey (ESS)" src="img/ESS-logo.png" alt="European Social Survey (ESS)" align="center" height="150px">
+<img title="European Social Survey (ESS)" src="img/ESS-logo.png" alt="European Social Survey (ESS)" align="center" height="170px">
 
 ## Description
 
 [This analysis](https://pessini.github.io/european-voters/) will investigate a dataset provided by [European Social Survey (ESS)](https://www.europeansocialsurvey.org/) which is a cross-national survey of attitudes and behaviour from European citizens. The topics covered by ESS are very heterogeneous and include media and social trust, politics, immigration, citizen involvement, health and care, economic, work and well-being.
 
-The analysis will focus on which aspects can influence a person to vote for their country to leave or remain a member of the European Union. The variables selected are mostly socio-demographic such as education, employment status and Union membership status.
+The [analysis]((https://pessini.github.io/european-voters/)) will focus on which aspects can influence a person to vote for their country to leave or remain a member of the European Union. The variables selected are mostly socio-demographic such as education, employment status and Union membership status.
 
 ### Software version
 
