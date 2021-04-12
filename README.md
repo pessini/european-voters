@@ -1,6 +1,6 @@
 ## Examining factors that influence EU acceptance among European voters
 
-<img title="" src="img/ess_logo.png" alt="" align="center">
+<img title="" src="img/ESS-logo.png" alt="" align="center">
 
 ## Description
 
@@ -39,9 +39,3 @@ The analysis of survey data often uses complex sample designs and **weighting a
 ## Data Storytelling
 
 The Data Analysis can be visualized as a [GitHub Page](https://pessini.github.io/european-voters/).
-
-
-
-```
-[^longnote]:
-```
