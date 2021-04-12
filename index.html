@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>European-Voters-Analysis</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>European Voters Analysis</title><link id="favicon" rel="shortcut icon" type="image/x-icon" href="https://github.com/pessini/pessini/blob/main/img/jupyter-logo.png"><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14259,6 +14259,14 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img title="GitHub Octocat" src='https://github.com/pessini/european-voters/blob/main/img/Octocat.jpg?raw=true' style='height: 60px; padding-right: 15px' alt="Octocat" align="left"> This notebook is part of a GitHub repository: <a href="https://github.com/pessini/european-voters">https://github.com/pessini/european-voters</a> 
+<br>MIT Licensed
+<br>Author: Leandro Pessini</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Examining-factors-that-influence-EU-acceptance-among-European-voters"><p style="background-color:#003399; font-family:tahoma; font-size:120%; text-align:left; color:#FFCC00; padding: 15px 5px 15px 25px; border-radius: 15px;">Examining factors that influence EU acceptance among European voters</p><a class="anchor-link" href="#Examining-factors-that-influence-EU-acceptance-among-European-voters">&#182;</a></h1><h2 id="Would-you-vote-for-your-country-to-leave-or-remain-in-the-European-Union?">Would you vote for your country to leave or remain in the European Union?<a class="anchor-link" href="#Would-you-vote-for-your-country-to-leave-or-remain-in-the-European-Union?">&#182;</a></h2>
 </div>
 </div>
@@ -14320,8 +14328,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This analysis will investigate a dataset provided by <a href="https://www.europeansocialsurvey.org/">European Social Survey (ESS)</a> which is a cross-national survey of attitudes and behaviour from European citizens. The topics covered by ESS are very heterogeneous and include media and social trust, politics, immigration, citizen involvement, health and care, economic, work and well-being.</p>
-<p>The analysis will focus on which aspects can influence a person to vote for their country to leave or remain a member of the European Union. The variables selected are mostly socio-demographic such as education, employment status and Union membership status.</p>
+<p><img title="European Social Survey" src="img/ess_logo.png" alt="European Social Survey (ESS)" align="right"> This analysis will investigate a dataset provided by <a href="https://www.europeansocialsurvey.org/">European Social Survey (ESS)</a> which is a cross-national survey of attitudes and behaviour from European citizens. The topics covered by ESS are very heterogeneous and include media and social trust, politics, immigration, citizen involvement, health and care, economic, work and well-being.</p>
+<p>The focus will be on which aspects can influence a person to vote for their country to leave or remain a member of the European Union. The variables selected are mostly socio-demographic such as education, employment status and Union membership status.</p>
 
 </div>
 </div>
@@ -42751,7 +42759,7 @@ height=600
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Setting Remain in variable vteurmmb as the first factor level</span>
-<span class="c1"># Applying this transformation in order to use </span>
+<span class="c1"># Applying this transformation in order to use Remain as 0 and Leave as 1-Default</span>
 <span class="n">weighted_df_ess</span><span class="o">$</span><span class="n">variables</span><span class="o">$</span><span class="n">vteurmmb</span> <span class="o">&lt;-</span> <span class="nf">relevel</span><span class="p">(</span><span class="n">weighted_df_ess</span><span class="o">$</span><span class="n">variables</span><span class="o">$</span><span class="n">vteurmmb</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="s">&quot;Remain&quot;</span><span class="p">)</span>
 
 <span class="nf">str</span><span class="p">(</span><span class="n">weighted_df_ess</span><span class="o">$</span><span class="n">variables</span><span class="p">)</span>
@@ -42823,8 +42831,7 @@ height=600
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[70]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="c1"># Creating a plot to check hyphotesis 3</span>
-<span class="n">educational_profile</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">eduyrs</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">60</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="n">.</span><span class="m">5</span><span class="p">))</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">educational_profile</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">eduyrs</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">60</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="n">.</span><span class="m">5</span><span class="p">))</span>
 
 <span class="n">educational_profile</span><span class="o">$</span><span class="n">predicted_probs</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">glm_eduyears_vote</span><span class="p">,</span> 
                                               <span class="n">newdata</span> <span class="o">=</span> <span class="n">educational_profile</span><span class="p">,</span> 
@@ -45128,43 +45135,12 @@ Number of Fisher Scoring iterations: 5
 </blockquote>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[74]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">getRversion</span><span class="p">()</span>
-</pre></div>
-
-     </div>
 </div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
-<pre>[1] ‘4.0.2’</pre>
-</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img title="GitHub Mark" src="https://github.com/pessini/european-voters/blob/main/img/GitHub-Mark-64px.png?raw=true" style="height: 32px; padding-right: 15px" alt="GitHub Mark" align="left"> <a href="https://github.com/pessini/european-voters">GitHub repository</a> <br>Author: Leandro Pessini</p>
 
 </div>
-
-</div>
-
-</div>
-
 </div>
 </body>
 
