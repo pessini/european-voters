@@ -1,6 +1,6 @@
 ## Examining factors that influence EU acceptance among European voters
 
-<img title="" src="img/ESS-logo.png" alt="" align="center">
+<img title="European Social Survey (ESS)" src="img/ESS-logo.png" alt="European Social Survey (ESS)" align="center" height="70px">
 
 ## Description
 
