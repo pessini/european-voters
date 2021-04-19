@@ -4,7 +4,7 @@
 
 ## Description
 
-This [analysis](https://pessini.github.io/european-voters/) investigate a dataset provided by [European Social Survey (ESS)](https://www.europeansocialsurvey.org/) which is a cross-national survey of attitudes and behaviour from European citizens. The topics covered by ESS are very heterogeneous and include media and social trust, politics, immigration, citizen involvement, health and care, economic, work and well-being.
+This [analysis](https://pessini.github.io/european-voters/) investigates a dataset provided by [European Social Survey (ESS)](https://www.europeansocialsurvey.org/) which is a cross-national survey of attitudes and behaviour from European citizens. The topics covered by ESS are very heterogeneous and include media and social trust, politics, immigration, citizen involvement, health and care, economic, work and well-being.
 
 The [analysis](https://pessini.github.io/european-voters/) focus on which aspects can influence a person to vote for their country to leave or remain a member of the European Union. The variables selected are mostly socio-demographic such as education, employment status and Union membership status.
 
