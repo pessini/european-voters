@@ -10,7 +10,9 @@ The [analysis](https://pessini.github.io/european-voters/) focus on which aspect
 
 ### Software version
 
-![R version 4.0.2](https://img.shields.io/badge/R-4.0.2-orange)
+![R version 4.0.2](https://img.shields.io/badge/R%20version-4.0.2-orange)
+
+
 
 To run R in [Jupyter Notebooks](https://jupyter.org/), check out the [IRKernel](https://irkernel.github.io/) project.
 
