@@ -1,7 +1,8 @@
 ## Examining factors that influence EU acceptance among European voters
 ![R version 4.0.2](https://img.shields.io/badge/R%20version-4.0.2-orange)
-[<img src="https://img.shields.io/badge/License-MIT-blue.svg?style=plastic" title="" alt="License" width="82">](https://opensource.org/licenses/MIT)
+<img src="https://img.shields.io/badge/License-MIT-blue.svg?style=plastic" title="" alt="License" width="82">(https://opensource.org/licenses/MIT)
 
+---
 <img title="European Social Survey (ESS)" src="img/ESS-logo.png" alt="European Social Survey (ESS)" align="center" height="170px">
 
 ## Description
