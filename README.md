@@ -2,21 +2,13 @@
 
 <img title="European Social Survey (ESS)" src="img/ESS-logo.png" alt="European Social Survey (ESS)" align="center" height="170px">
 
+[<img src="https://img.shields.io/badge/License-MIT-blue.svg?style=plastic" title="" alt="License" width="82">](https://opensource.org/licenses/MIT) ![R version 4.0.2](https://img.shields.io/badge/R%20version-4.0.2-orange)
+
 ## Description
 
 This [analysis](https://pessini.github.io/european-voters/) investigates a dataset provided by [European Social Survey (ESS)](https://www.europeansocialsurvey.org/) which is a cross-national survey of attitudes and behaviour from European citizens. The topics covered by ESS are very heterogeneous and include media and social trust, politics, immigration, citizen involvement, health and care, economic, work and well-being.
 
 The [analysis](https://pessini.github.io/european-voters/) focus on which aspects can influence a person to vote for their country to leave or remain a member of the European Union. The variables selected are mostly socio-demographic such as education, employment status and Union membership status.
-
-### Software version
-
-![R version 4.0.2](https://img.shields.io/badge/R%20version-4.0.2-orange)
-
-
-
-To run R in [Jupyter Notebooks](https://jupyter.org/), check out the [IRKernel](https://irkernel.github.io/) project.
-
-For a list of supported programming languages in Jupyter Notebooks, please refer to the [Jupyter kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) page in GitHub.
 
 ## Dataset
 
@@ -42,8 +34,4 @@ The analysis of survey data often uses complex sample designs and **weighting a
 
 The Data Analysis can be visualized as a [GitHub Page](https://pessini.github.io/european-voters/).
 
-
-
 ## License <a name="license"></a>
-
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=plastic)](https://opensource.org/licenses/MIT)
