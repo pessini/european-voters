@@ -1,8 +1,5 @@
 ## Examining factors that influence EU acceptance among European voters
-![R version 4.0.2](https://img.shields.io/badge/R%20version-4.0.2-orange)
-<img src="https://img.shields.io/badge/License-MIT-blue.svg?style=plastic" title="" alt="License" width="82">(https://opensource.org/licenses/MIT)
 
----
 <img title="European Social Survey (ESS)" src="img/ESS-logo.png" alt="European Social Survey (ESS)" align="center" height="170px">
 
 ## Description
@@ -35,4 +32,6 @@ The analysis of survey data often uses complex sample designs and **weighting a
 
 The Data Analysis can be visualized as a [GitHub Page](https://pessini.github.io/european-voters/).
 
-## License <a name="license"></a>
+---
+![R version 4.0.2](https://img.shields.io/badge/R%20version-4.0.2-orange)
+[<img src="https://img.shields.io/badge/License-MIT-blue.svg?style=plastic" title="" alt="License" width="82">](https://opensource.org/licenses/MIT)
